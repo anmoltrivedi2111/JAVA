@@ -1,0 +1,82 @@
+import javax.swing.JFrame;
+import java.awt.BorderLayout;
+import java.awt.Canvas;
+import java.awt.Graphics;
+class FrameDemo 
+{
+	public static void main(String[] args) 
+	{
+		JFrame jf = new JFrame("Game");
+		jf.setLayout(new BorderLayout());
+		jf.setSize(500,500);
+		Can c1 = new Can();
+		jf.add(c1);
+		jf.setVisible(true);
+		
+	}
+	static class Can extends Canvas implements Runnable
+	{
+		int x =100,y =250, ct =0;
+		Can(){
+			Thread t1 = new Thread(this);
+			t1.start();
+		}	//constructor  close
+	public void	paint(Graphics g)
+	{
+		g.drawRect(100,100,300,300);
+		
+	}	//paintmethod close
+	
+	public void run()
+	{
+	while(true)
+	{
+	if(ct==0){
+	x = x+2;
+	y = y-2;
+	
+		if(x==250){
+				ct=1;
+				}
+		//try-catch close
+		
+		
+		}else if(ct==1){
+			x= x+2;
+			y= y+2;
+				if(x==378){
+					ct=2;}
+				
+			
+		}else if(ct==2){
+			x = x-2;
+			y = y+2;
+				if(y==378){
+					ct=3;
+				}
+		}
+		else
+		{
+		x=x-2;
+		y =y-2;
+			if(x==100){
+				ct =0;
+			}
+		} //if-else statement close
+		try
+		{
+		Thread.sleep(15);
+		repaint();	
+		}
+		catch (Exception e)
+		{
+		}
+		
+		
+	
+	} //infinite loop close
+		
+	}//run methood close
+	
+	} //canvas close
+} //FrameDemo close

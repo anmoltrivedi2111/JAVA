@@ -1,0 +1,17 @@
+import java.awt.*;
+import javax.swing.*;
+
+class ImgDemo 
+{
+	public static void main(String[] args) 
+	{
+		JFrame jf = new JFrame("Image on Canvas");
+		jf.setSize(500,500);
+		JLabel lb = new JLabel();
+		ImageIcon ic = new ImageIcon("P://JAVA//GUI//image-6.jpeg")
+		lb.setIcon(ic);
+		jf.add(lb);
+		jf.setVisible(true);
+		
+	}
+}

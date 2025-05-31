@@ -1,0 +1,14 @@
+class SortArray
+import java.util.Scanner;
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Anmol Trivedi ");
+		System.out.println("0873AL231007");
+		
+		Scanner scan = new Scanner(System.in);
+		
+		int 
+		
+	}
+}

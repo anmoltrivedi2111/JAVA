@@ -1,0 +1,14 @@
+SYNCHRONIZED PROCESS :- 
+
+when thread is synchronised. it generates a monitor and locks it. by the JVM. and gives proper time to execute. after its process completion, the thread gets released and other synchronized threads gets locked. 
+
+THREAD SAFE:- when thread is synchronized, it is thread safe, otherwise it is not safe. 
+
+
+booleam  	isAlive();.
+Thread 		currentThread();
+void 		setPriority(int x) max 1-10
+int 		getPriority();
+void 		setName(string name);
+string 		getname();
+

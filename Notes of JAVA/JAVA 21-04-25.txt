@@ -1,0 +1,12 @@
+Que -- How to break a Singleton object (Search on google)
+
+JDK 17 && NETBEANS 17
+
+IO'S
+There are two types of stream for data handling. 
+1. Byte Stream -:
+in a byte stream, we can handle 1 byte of data at a time.
+
+2.character stream -:
+In a character stream, we can handle 2 byte of data at a time.
+ 

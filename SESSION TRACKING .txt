@@ -1,0 +1,107 @@
+SESSION TRACKING IS a way to maintain state (data ) of an user. It is also known as session management in Servlet
+
+Http protocol is a stateless so we need to maintain state using session tracking techniques. Each time user requests to the server, server treats the request as the new request. So we need to maintain the state of an user to recognize particular user. 
+
+Session Tracking Techniques
+1. Cookies
+2. Hidden Form 
+3. URL rewriting
+4. HTTP Session
+
+Cookies:- 
+A cookie is a small piece of information that is persistent between the multiple client requests. A cookie has a name, a single value, and optional attributes such as a comment, path, and domain qualifiers, a maximum age and a version number. 
+
+By default each request is considered as a new request. in cookies techniques, we add cookies technique, we add cookie with a response from the servlet. So cookie is stored in the cache of the browser, After that if request is sent by the user, cookie is added with the request by default. Thus, we recognize the user as the old user. 
+
+Types of Cookies. 
+Two types of cookies
+1. Non-persistent cookies:- Valid for single session only.removes after closing browser
+2. Persistent Cookies:- it is valid for multiple session. not removes after closing browser each time. only removes when user logs out.
+
+
+ServletContext(webapp)
+
+ServletContext 	getServletContext()
+
+ServletContext
+RequestDispatcher 		getRequestDispatcher("Name of Servlet/JSP");
+
+RequestDispatcher
+	include
+	forward
+
+
+
+M - Model(DataBase Coding) JDBC
+V - View(User Interface) JSP, HTML
+C - Controller (Network coding) (req,res) Servlet
+
+
+
+
+JSP ( Java Server Pages)
+
+abc.jsp --> abc_jsp.java--> abc_jsp.class jsp Engine
+						(Servlet Engine)
+				Servlet object <----return
+
+<%    %> (Scriptlet Tag)
+
+<%=   %> (Assignment Tag)
+
+<%!   %> (Declaration Tag)
+
+These three tags create scripting tag after combining
+
+
+<html>
+<body>
+
+<% session.setAttribute("name","amit@123"); %>
+<h1> Your Session card is cr.... on your M/C </h1>
+<a href="sess2.jsp" >Next </a>
+
+<!--2nd way -->
+
+<% HttpSession hs = request.getSession(true) %>
+<h1> 
+
+
+
+RETRIEVING DATA FROM SESSION
+<html>
+<body>
+<% string s1 = (String)session.getAttribute("name"); %>
+<%= "value = " + s1 %>
+</body>
+</html>
+
+
+SIMPLE WAY TO MAKE COOKIES IN JSP
+
+<html>
+<body>
+<% Cookie ck = new Cookie("x", "1000");
+c.setMaxAge(4000);
+response.addCookie(ck); %>
+<h1> Cookie is created and stored on client M/C </h1>
+</body>
+</html>
+
+CHAINING IN JSP FILE
+
+<html>
+<body>
+
+<jsp:forward page="f2.jsp" >
+<jsp:param name="name" value="value" />
+<jsp:param name="Add" value="indore" />
+<jsp"param name="mob" value="748925: />
+<jsp:param name = "loc" value="delhi" />
+<jsp:param name="post" value="manager" />
+<jsp:forward>
+</body>
+</html>
+
+
+

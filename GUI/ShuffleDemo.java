@@ -1,0 +1,58 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+class ShuffleDemo
+{
+	public static void main(String[] args) 
+	{
+		JFrame jf = new JFrame("MouseWork");
+		jf.setLayout(new BorderLayout());
+		jf.setSize(500,500);
+		Can c1 = new Can();
+		jf.add(c1);
+		jf.setVisible(true);
+		
+	}//main Function ended 
+	
+static class Can extends Canvas
+{
+	int x1, y1,x2,y2;
+	Can(){
+
+	addMouseListener(new XYZ());	
+		
+	}//constructor ended
+	
+	public void paint(Graphics g){
+		
+		g.drawLine(x1,y1,x2,y2);
+	}//paint function ended
+
+class XYZ implements MouseListener
+{
+	public void mousePressed(MouseEvent me){
+		x1 = me.getX();
+		y1 = me.getY();
+	}
+	
+	public void mouseReleased(MouseEvent me) {
+		x2 = me.getX();
+		y2 = me.getY();
+		repaint();
+	}			
+		
+	//mousepressed function end
+	
+}//XYZ class Ends
+
+}//canvas class end	
+
+}//main class end
+// 3 buttons banaane hai, rectangle, oval, 
+
+//shuffle game
+
+//1st task, (how to add image on canvas )add all images in the canvas 
+
+
+
