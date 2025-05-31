@@ -1,0 +1,30 @@
+package com.univ.DAO;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import com.univ.DB.DBConnection;
+import com.univ.DTO.CustomerDTO;
+
+public class CustomerDAO {
+	public int insert(CustomerDTO dto)
+	{
+		int x = 0;
+		try {
+			Connection con = DBConnection.getConn();
+			PreparedStatement ps =con.prepareStatement
+			("insert into customer(cname,cadd,email,mob,unm,pw) values(?,?,?,?,?,?)");
+			ps.setString(1, dto.getCname());
+			ps.setString(2, dto.getCadd());
+			ps.setString(3, dto.getEmail());
+			ps.setLong(4, dto.getMob());
+			ps.setString(5,dto.getUnm());
+			ps.setString(6, dto.getPw());
+			x =ps.executeUpdate();
+			
+			
+		}catch(Exception e) {System.out.println(e);}
+		
+		return x;
+	}
+}

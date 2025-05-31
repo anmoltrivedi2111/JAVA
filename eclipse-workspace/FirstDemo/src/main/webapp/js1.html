@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<input type="text" id = "t1" /> <br> <br>
+<input type="text" id = "t2" /> <br><br>
+<input type="text" id = "t3" /> <br><br>
+<button type="button" onclick = "add1()" > Add</button>
+</body>
+
+
+  
+</body>
+<script>
+function add1()
+{
+	var x = Integer.parseInt(document.getElementById("t1").value);
+	var y = Integer.parseInt(document.getElementById("t2").value);
+	document.getElementById("t3").value=(x+y);
+	
+	}
+
+</script>
+</html>
